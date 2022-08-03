@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-import org.luffy.dto.Message;
+import org.luffy.handleException.Message;
 import org.luffy.jooq.tables.records.UsersRecord;
 import org.luffy.models.User;
 import org.springframework.stereotype.Service;

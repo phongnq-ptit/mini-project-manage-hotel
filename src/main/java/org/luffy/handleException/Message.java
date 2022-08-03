@@ -1,4 +1,4 @@
-package org.luffy.dto;
+package org.luffy.handleException;
 
 public class Message {
   private String msg;
