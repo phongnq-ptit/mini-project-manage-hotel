@@ -1,0 +1,44 @@
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.17.0.xsd">
+  <!-- Configure the database connection here -->
+  <jdbc>
+    <driver>com.mysql.cj.jdbc.Driver</driver>
+    <url>jdbc:mysql://localhost:3306/manage_hotel_v2</url>
+    <user>root</user>
+    <password>17102001abc!</password>
+
+    <!-- You can also pass user/password and other JDBC properties in the optional properties tag: -->
+    <properties>
+      <property><key>user</key><value>root</value></property>
+      <property><key>password</key><value>17102001abc!</value></property>
+    </properties>
+  </jdbc>
+
+  <generator>
+    <database>
+      <name>org.jooq.meta.mysql.MySQLDatabase</name>
+      <includes>.*</includes>
+      <excludes>
+        UNUSED_TABLE                # This table (unqualified name) should not be generated
+        | PREFIX_.*                   # Objects with a given prefix should not be generated
+        | SECRET_SCHEMA\.SECRET_TABLE # This table (qualified name) should not be generated
+        | SECRET_ROUTINE              # This routine (unqualified name) ...
+      </excludes>
+      <inputSchema>manage_hotel_v2</inputSchema>
+    </database>
+
+    <!-- Generation flags: See advanced configuration properties -->
+    <generate/>
+
+    <target>
+      <!-- The destination package of your generated classes (within the
+           destination directory)
+           jOOQ may append the schema name to this package if generating multiple schemas,
+           e.g. org.jooq.your.packagename.schema1
+                org.jooq.your.packagename.schema2 -->
+      <packageName>org.luffy.jooq</packageName>
+
+      <!-- The destination directory of your generated classes -->
+      <directory>src/main/java</directory>
+    </target>
+  </generator>
+</configuration>
