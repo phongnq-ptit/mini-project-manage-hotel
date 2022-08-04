@@ -2,7 +2,7 @@ package org.luffy.controllers;
 
 import javax.ws.rs.core.Response;
 import org.luffy.dto.UserDTO;
-import org.luffy.services.UsersService;
+import org.luffy.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,43 +14,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/users")
+@RequestMapping("/api/users")
 public class UsersController {
-
-  private final UsersService usersService;
+  private final UserService userService;
 
   @Autowired
-  public UsersController(UsersService usersService) {
-    this.usersService = usersService;
+  public UsersController(UserService userService) {
+    this.userService = userService;
   }
 
   @GetMapping
   public Response getUsers() {
-    return usersService.getUsers();
+    return userService.getUsers();
   }
 
   @GetMapping("/{id}")
   public Response getUsers(@PathVariable("id") Long id) {
-    return usersService.getUser(id);
+    return userService.getUser(id);
   }
 
   @PostMapping(path = "/login")
   public Response handleLogin(@RequestBody UserDTO userDto) {
-    return usersService.handleLogin(userDto.toUser());
+    return userService.handleLogin(userDto.toUser());
   }
 
-  @PostMapping(path = "/register")
+  @PostMapping("/register")
   public Response handleRegister(@RequestBody UserDTO userDTO) {
-    return usersService.handleRegister(userDTO.toUser());
+    return userService.handleRegister(userDTO.toUser());
   }
 
   @PatchMapping("/{id}")
   public Response updateUser(@PathVariable("id") Long id, @RequestBody UserDTO userDTO) {
-    return usersService.updateUser(id, userDTO.toUser());
+    return userService.updateUser(id, userDTO.toUser());
   }
 
-  @DeleteMapping("{id}")
+  @DeleteMapping("/{id}")
   public Response delete(@PathVariable("id") Long id) {
-    return usersService.deleteUser(id);
+    return userService.deleteUser(id);
   }
 }

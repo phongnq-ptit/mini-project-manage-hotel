@@ -4,6 +4,7 @@
 package org.luffy.jooq;
 
 
+import org.luffy.jooq.tables.Events;
 import org.luffy.jooq.tables.FlywaySchemaHistory;
 import org.luffy.jooq.tables.Users;
 
@@ -13,6 +14,11 @@ import org.luffy.jooq.tables.Users;
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
+
+    /**
+     * The table <code>manage_hotel_v2.events</code>.
+     */
+    public static final Events EVENTS = Events.EVENTS;
 
     /**
      * The table <code>manage_hotel_v2.flyway_schema_history</code>.

@@ -10,6 +10,7 @@ import java.util.List;
 import org.jooq.Catalog;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;
+import org.luffy.jooq.tables.Events;
 import org.luffy.jooq.tables.FlywaySchemaHistory;
 import org.luffy.jooq.tables.Users;
 
@@ -26,6 +27,11 @@ public class ManageHotelV2 extends SchemaImpl {
      * The reference instance of <code>manage_hotel_v2</code>
      */
     public static final ManageHotelV2 MANAGE_HOTEL_V2 = new ManageHotelV2();
+
+    /**
+     * The table <code>manage_hotel_v2.events</code>.
+     */
+    public final Events EVENTS = Events.EVENTS;
 
     /**
      * The table <code>manage_hotel_v2.flyway_schema_history</code>.
@@ -53,6 +59,7 @@ public class ManageHotelV2 extends SchemaImpl {
     @Override
     public final List<Table<?>> getTables() {
         return Arrays.asList(
+            Events.EVENTS,
             FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY,
             Users.USERS
         );

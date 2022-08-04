@@ -20,6 +20,12 @@ public class User {
   private String avatar;
   private String role;
 
+  public User() {
+  }
+
+  /**
+   * constructor used in database query
+   */
   public User(Long id, String email, String password, String name, String address,
       String phone, String avatar, String role) {
     this.id = id;
@@ -32,13 +38,24 @@ public class User {
     this.role = role;
   }
 
-  public User(String email, String password, String name, String address, String phone, String avatar) {
+  /**
+   * constructor used in userDTO
+   */
+  public User(String email, String password, String name, String address, String phone,
+      String avatar) {
     this.email = email;
     this.password = password;
     this.name = name;
     this.address = address;
     this.phone = phone;
     this.avatar = avatar;
+  }
+
+  /**
+   * constructor used in eventDTO
+   */
+  public User(Long id) {
+    this.id = id;
   }
 
   public Long getId() {

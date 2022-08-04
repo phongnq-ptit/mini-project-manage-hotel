@@ -80,7 +80,7 @@ public class UserDTO {
   }
 
   public User toUser() {
-    return new User(this.email, this.password, this.name, this.address, this.phone, this.getAvatar());
+    return new User(this.email, this.password, this.name, this.address, this.phone, this.avatar);
   }
 }
 
