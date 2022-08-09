@@ -33,7 +33,7 @@ public class UsersController {
     return userService.getUser(id);
   }
 
-  @PostMapping(path = "/login")
+  @PostMapping("/login")
   public Response handleLogin(@RequestBody UserDTO userDto) {
     return userService.handleLogin(userDto.toUser());
   }

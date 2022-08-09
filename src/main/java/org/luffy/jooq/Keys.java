@@ -8,11 +8,21 @@ import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
 import org.jooq.impl.Internal;
+import org.luffy.jooq.tables.BookedRooms;
+import org.luffy.jooq.tables.Bookings;
 import org.luffy.jooq.tables.Events;
 import org.luffy.jooq.tables.FlywaySchemaHistory;
+import org.luffy.jooq.tables.ImageUpload;
+import org.luffy.jooq.tables.RoomImages;
+import org.luffy.jooq.tables.Rooms;
 import org.luffy.jooq.tables.Users;
+import org.luffy.jooq.tables.records.BookedRoomsRecord;
+import org.luffy.jooq.tables.records.BookingsRecord;
 import org.luffy.jooq.tables.records.EventsRecord;
 import org.luffy.jooq.tables.records.FlywaySchemaHistoryRecord;
+import org.luffy.jooq.tables.records.ImageUploadRecord;
+import org.luffy.jooq.tables.records.RoomImagesRecord;
+import org.luffy.jooq.tables.records.RoomsRecord;
 import org.luffy.jooq.tables.records.UsersRecord;
 
 
@@ -27,7 +37,12 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final UniqueKey<BookedRoomsRecord> KEY_BOOKED_ROOMS_PRIMARY = Internal.createUniqueKey(BookedRooms.BOOKED_ROOMS, DSL.name("KEY_booked_rooms_PRIMARY"), new TableField[] { BookedRooms.BOOKED_ROOMS.ID }, true);
+    public static final UniqueKey<BookingsRecord> KEY_BOOKINGS_PRIMARY = Internal.createUniqueKey(Bookings.BOOKINGS, DSL.name("KEY_bookings_PRIMARY"), new TableField[] { Bookings.BOOKINGS.ID }, true);
     public static final UniqueKey<EventsRecord> KEY_EVENTS_PRIMARY = Internal.createUniqueKey(Events.EVENTS, DSL.name("KEY_events_PRIMARY"), new TableField[] { Events.EVENTS.ID }, true);
     public static final UniqueKey<FlywaySchemaHistoryRecord> KEY_FLYWAY_SCHEMA_HISTORY_PRIMARY = Internal.createUniqueKey(FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY, DSL.name("KEY_flyway_schema_history_PRIMARY"), new TableField[] { FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY.INSTALLED_RANK }, true);
+    public static final UniqueKey<ImageUploadRecord> KEY_IMAGE_UPLOAD_PRIMARY = Internal.createUniqueKey(ImageUpload.IMAGE_UPLOAD, DSL.name("KEY_image_upload_PRIMARY"), new TableField[] { ImageUpload.IMAGE_UPLOAD.ID }, true);
+    public static final UniqueKey<RoomImagesRecord> KEY_ROOM_IMAGES_PRIMARY = Internal.createUniqueKey(RoomImages.ROOM_IMAGES, DSL.name("KEY_room_images_PRIMARY"), new TableField[] { RoomImages.ROOM_IMAGES.ID }, true);
+    public static final UniqueKey<RoomsRecord> KEY_ROOMS_PRIMARY = Internal.createUniqueKey(Rooms.ROOMS, DSL.name("KEY_rooms_PRIMARY"), new TableField[] { Rooms.ROOMS.ID }, true);
     public static final UniqueKey<UsersRecord> KEY_USERS_PRIMARY = Internal.createUniqueKey(Users.USERS, DSL.name("KEY_users_PRIMARY"), new TableField[] { Users.USERS.ID }, true);
 }

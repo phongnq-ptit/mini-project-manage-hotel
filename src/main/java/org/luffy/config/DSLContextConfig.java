@@ -15,7 +15,7 @@ public class DSLContextConfig {
 
   public DSLContextConfig() throws SQLException {
     this.conn = (Connection) DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/manage_hotel?autoReconnect=true",
+        "jdbc:mysql://localhost:3306/manage_hotel_v2?autoReconnect=true",
         "root",
         "17102001abc!");
     this.context = DSL.using(conn, SQLDialect.MYSQL);

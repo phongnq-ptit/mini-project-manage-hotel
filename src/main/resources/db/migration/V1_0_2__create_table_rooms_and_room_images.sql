@@ -1,0 +1,17 @@
+CREATE TABLE rooms (
+id INT NOT NULL AUTO_INCREMENT,
+floor INT NULL,
+room_number INT NULL,
+room_type VARCHAR(45) NULL,
+capacity INT NULL,
+price FLOAT NULL,
+description MEDIUMTEXT NULL,
+note MEDIUMTEXT NULL,
+active TINYINT NULL DEFAULT 1,
+PRIMARY KEY (id));
+
+CREATE TABLE room_images (
+id INT NOT NULL AUTO_INCREMENT,
+url VARCHAR(255) NULL,
+room_id INT NULL,
+PRIMARY KEY (id));

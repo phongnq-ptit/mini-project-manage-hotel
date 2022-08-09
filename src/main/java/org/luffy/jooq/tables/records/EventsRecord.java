@@ -12,8 +12,6 @@ import org.jooq.Record7;
 import org.jooq.Row7;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.luffy.jooq.tables.Events;
-import org.luffy.models.Event;
-import org.luffy.models.User;
 
 
 /**
